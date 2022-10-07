@@ -1,0 +1,52 @@
+.component {
+  position: relative;
+  height: pxToRem(310);
+  width: calc(100vw - pxToRem(36));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: pxToRem(50) pxToRem(20);
+  border-radius: pxToRem(10);
+  text-align: center;
+  background-color: $dark-grayish-blue;
+  
+  h1 {
+    font-size: pxToRem(11);
+    letter-spacing: pxToRem(4);
+    color: $neon-green;
+  }
+
+  p {
+    font-size: pxToRem(24);
+    font-weight: 800;
+    color: $light-cyan;
+  }
+
+  .dice-container {
+    position: absolute;
+    bottom: pxToRem(-31);
+    display: grid;
+    background-color: $neon-green;
+    padding: pxToRem(20);
+    border-radius: pxToRem(50);
+    cursor: pointer;
+    transition: box-shadow ease-in-out 0.3s;
+    
+    .dice {
+      height: pxToRem(24);
+      width: pxToRem(24);
+      transition: transform ease-in-out 0.4s;
+    }
+
+    &:hover {
+      box-shadow: 0 0 pxToRem(16) pxToRem(8) lighten($neon-green, $amount: 5);
+
+      .dice {
+        transform: rotateZ(-90deg);
+      }
+    }
+  }
+}
