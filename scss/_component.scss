@@ -24,6 +24,11 @@
     font-weight: 800;
     color: $light-cyan;
   }
+  
+  .dice-loading {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 
   .dice-container {
     position: absolute;
@@ -31,6 +36,7 @@
     display: grid;
     background-color: $neon-green;
     padding: pxToRem(20);
+    border: none;
     border-radius: pxToRem(50);
     cursor: pointer;
     transition: box-shadow ease-in-out 0.3s;
@@ -38,15 +44,10 @@
     .dice {
       height: pxToRem(24);
       width: pxToRem(24);
-      transition: transform ease-in-out 0.4s;
     }
 
     &:hover {
       box-shadow: 0 0 pxToRem(16) pxToRem(8) lighten($neon-green, $amount: 5);
-
-      .dice {
-        transform: rotateZ(-90deg);
-      }
     }
   }
 }
